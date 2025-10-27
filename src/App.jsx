@@ -1,26 +1,25 @@
-import { useState } from 'react'
+import React from 'react'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Highlights from './components/Highlights'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen flex flex-col bg-white">
+      <Header />
+      <main className="flex-1">
+        <Hero />
+        <Highlights />
+        {/* FAQ placeholder anchor to satisfy nav links */}
+        <section id="faq" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h3 className="text-2xl font-bold text-green-800">Frequently Asked Questions</h3>
+          <div className="mt-4 bg-gray-50 rounded-lg p-6 text-gray-600">
+            This is a lightweight clone showcasing the look-and-feel of the PM-KISAN portal.
+          </div>
+        </section>
+      </main>
+      <Footer />
     </div>
   )
 }
